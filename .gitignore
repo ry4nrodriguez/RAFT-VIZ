@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+viewer/dist-pages/
+cli/dist/
+!cli/dist/.gitkeep
+go/.gocache/

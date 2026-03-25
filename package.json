@@ -1,0 +1,17 @@
+{
+  "name": "raftvis-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Drop-in Raft visualizationS",
+  "workspaces": [
+    "viewer",
+    "cli"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace viewer && npm run build --workspace cli",
+    "build:pages": "npm run build:pages --workspace viewer",
+    "test": "npm run test --workspace viewer && npm run test --workspace cli && npm run test:go",
+    "test:go": "cd go && GOCACHE=$(pwd)/.gocache go test ./...",
+    "dev": "npm run dev --workspace viewer"
+  }
+}
