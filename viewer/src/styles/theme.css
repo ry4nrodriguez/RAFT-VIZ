@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #111128;
+  --bg-panel: #0d0d20;
+  --border: #222244;
+  --border-accent: #333366;
+  --grid: #151530;
+  --follower-bg: #4a6fa5;
+  --follower-border: #2d4a7a;
+  --candidate-bg: #e8a838;
+  --candidate-border: #b07820;
+  --leader-bg: #4caf50;
+  --leader-border: #2e7d32;
+  --dead-bg: #666666;
+  --dead-border: #444444;
+  --msg-vote-request: #ffcc02;
+  --msg-vote-granted: #66ff66;
+  --msg-vote-denied: #ff4444;
+  --msg-append: #66bbff;
+  --msg-append-response: #88ddff;
+  --msg-heartbeat: #ff69b4;
+  --text-primary: #e0e0e0;
+  --text-secondary: #9aa0c4;
+  --text-muted: #60668f;
+  --text-accent: #88aaff;
+  --status-ok: #66ff66;
+  --status-warn: #ffcc02;
+  --status-error: #ff4444;
+  --font-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  --font-display: "Press Start 2P", "Courier New", monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  background:
+    radial-gradient(circle at top, rgba(90, 98, 180, 0.12), transparent 40%),
+    linear-gradient(180deg, rgba(10, 10, 26, 1) 0%, rgba(13, 13, 32, 1) 100%);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.control-button {
+  border: 1px solid var(--border-accent);
+  border-radius: 0.9rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+}
+
+.control-button:hover {
+  border-color: var(--text-accent);
+}
+
+input[type="range"] {
+  accent-color: var(--text-accent);
+}
+
