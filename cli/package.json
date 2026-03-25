@@ -1,0 +1,18 @@
+{
+  "name": "raftvis",
+  "version": "0.1.0",
+  "description": "Local server and file watcher for the RaftVis viewer.",
+  "type": "module",
+  "bin": {
+    "raftvis": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "scripts": {
+    "build": "node -e \"console.log('cli ready')\"",
+    "test": "node --test index.test.js"
+  }
+}
+
