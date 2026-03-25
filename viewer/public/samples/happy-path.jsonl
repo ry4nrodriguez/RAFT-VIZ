@@ -1,0 +1,33 @@
+{"ts":0,"event":"init","num_peers":5,"version":"1.0"}
+{"ts":40,"event":"state_change","server":0,"term":0,"to_state":"follower"}
+{"ts":45,"event":"state_change","server":1,"term":0,"to_state":"follower"}
+{"ts":50,"event":"state_change","server":2,"term":0,"to_state":"follower"}
+{"ts":55,"event":"state_change","server":3,"term":0,"to_state":"follower"}
+{"ts":60,"event":"state_change","server":4,"term":0,"to_state":"follower"}
+{"ts":320,"event":"election_timeout","server":2,"term":1}
+{"ts":325,"event":"state_change","server":2,"term":1,"from_state":"follower","to_state":"candidate"}
+{"ts":330,"event":"vote_request","server":2,"from":2,"to":0,"term":1}
+{"ts":333,"event":"vote_request","server":2,"from":2,"to":1,"term":1}
+{"ts":336,"event":"vote_request","server":2,"from":2,"to":3,"term":1}
+{"ts":339,"event":"vote_request","server":2,"from":2,"to":4,"term":1}
+{"ts":385,"event":"vote_granted","server":0,"from":0,"to":2,"term":1}
+{"ts":395,"event":"vote_granted","server":1,"from":1,"to":2,"term":1}
+{"ts":420,"event":"state_change","server":2,"term":1,"from_state":"candidate","to_state":"leader"}
+{"ts":470,"event":"append_entries","server":2,"from":2,"to":0,"term":1,"entry_count":0}
+{"ts":475,"event":"append_entries","server":2,"from":2,"to":1,"term":1,"entry_count":0}
+{"ts":480,"event":"append_entries","server":2,"from":2,"to":3,"term":1,"entry_count":0}
+{"ts":485,"event":"append_entries","server":2,"from":2,"to":4,"term":1,"entry_count":0}
+{"ts":520,"event":"append_response","server":0,"from":0,"to":2,"term":1,"success":true}
+{"ts":525,"event":"append_response","server":1,"from":1,"to":2,"term":1,"success":true}
+{"ts":530,"event":"append_response","server":3,"from":3,"to":2,"term":1,"success":true}
+{"ts":535,"event":"append_response","server":4,"from":4,"to":2,"term":1,"success":true}
+{"ts":650,"event":"append_entries","server":2,"from":2,"to":0,"term":1,"entry_count":1}
+{"ts":655,"event":"append_entries","server":2,"from":2,"to":1,"term":1,"entry_count":1}
+{"ts":660,"event":"append_entries","server":2,"from":2,"to":3,"term":1,"entry_count":1}
+{"ts":665,"event":"append_entries","server":2,"from":2,"to":4,"term":1,"entry_count":1}
+{"ts":720,"event":"commit","server":2,"term":1,"index":1,"command":"set x 3"}
+{"ts":735,"event":"commit","server":0,"term":1,"index":1,"command":"set x 3"}
+{"ts":740,"event":"commit","server":1,"term":1,"index":1,"command":"set x 3"}
+{"ts":745,"event":"commit","server":3,"term":1,"index":1,"command":"set x 3"}
+{"ts":750,"event":"commit","server":4,"term":1,"index":1,"command":"set x 3"}
+

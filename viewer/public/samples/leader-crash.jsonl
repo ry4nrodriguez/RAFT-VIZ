@@ -1,0 +1,27 @@
+{"ts":0,"event":"init","num_peers":5,"version":"1.0"}
+{"ts":20,"event":"state_change","server":1,"term":1,"from_state":"follower","to_state":"candidate"}
+{"ts":30,"event":"vote_request","server":1,"from":1,"to":0,"term":1}
+{"ts":35,"event":"vote_request","server":1,"from":1,"to":2,"term":1}
+{"ts":40,"event":"vote_request","server":1,"from":1,"to":3,"term":1}
+{"ts":45,"event":"vote_request","server":1,"from":1,"to":4,"term":1}
+{"ts":80,"event":"vote_granted","server":0,"from":0,"to":1,"term":1}
+{"ts":90,"event":"vote_granted","server":2,"from":2,"to":1,"term":1}
+{"ts":110,"event":"state_change","server":1,"term":1,"from_state":"candidate","to_state":"leader"}
+{"ts":180,"event":"append_entries","server":1,"from":1,"to":0,"term":1,"entry_count":1}
+{"ts":185,"event":"append_entries","server":1,"from":1,"to":2,"term":1,"entry_count":1}
+{"ts":220,"event":"commit","server":1,"term":1,"index":1,"command":"set y 7"}
+{"ts":245,"event":"commit","server":0,"term":1,"index":1,"command":"set y 7"}
+{"ts":250,"event":"commit","server":2,"term":1,"index":1,"command":"set y 7"}
+{"ts":320,"event":"crash","server":1,"term":1}
+{"ts":520,"event":"election_timeout","server":4,"term":2}
+{"ts":525,"event":"state_change","server":4,"term":2,"from_state":"follower","to_state":"candidate"}
+{"ts":530,"event":"vote_request","server":4,"from":4,"to":0,"term":2}
+{"ts":533,"event":"vote_request","server":4,"from":4,"to":2,"term":2}
+{"ts":536,"event":"vote_request","server":4,"from":4,"to":3,"term":2}
+{"ts":560,"event":"vote_granted","server":0,"from":0,"to":4,"term":2}
+{"ts":575,"event":"vote_granted","server":3,"from":3,"to":4,"term":2}
+{"ts":590,"event":"state_change","server":4,"term":2,"from_state":"candidate","to_state":"leader"}
+{"ts":650,"event":"append_entries","server":4,"from":4,"to":0,"term":2,"entry_count":0}
+{"ts":655,"event":"append_entries","server":4,"from":4,"to":2,"term":2,"entry_count":0}
+{"ts":660,"event":"append_entries","server":4,"from":4,"to":3,"term":2,"entry_count":0}
+

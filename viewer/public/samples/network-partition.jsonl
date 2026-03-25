@@ -1,0 +1,17 @@
+{"ts":0,"event":"init","num_peers":5,"version":"1.0"}
+{"ts":150,"event":"state_change","server":2,"term":1,"from_state":"candidate","to_state":"leader"}
+{"ts":210,"event":"append_entries","server":2,"from":2,"to":0,"term":1,"entry_count":1}
+{"ts":215,"event":"append_entries","server":2,"from":2,"to":1,"term":1,"entry_count":1}
+{"ts":250,"event":"commit","server":2,"term":1,"index":1,"command":"set a 1"}
+{"ts":260,"event":"commit","server":0,"term":1,"index":1,"command":"set a 1"}
+{"ts":265,"event":"commit","server":1,"term":1,"index":1,"command":"set a 1"}
+{"ts":410,"event":"custom","server":2,"term":1,"detail":"network partition: S2 isolated from S3,S4"}
+{"ts":520,"event":"election_timeout","server":4,"term":2}
+{"ts":525,"event":"state_change","server":4,"term":2,"from_state":"follower","to_state":"candidate"}
+{"ts":530,"event":"vote_request","server":4,"from":4,"to":3,"term":2}
+{"ts":535,"event":"vote_request","server":4,"from":4,"to":1,"term":2}
+{"ts":570,"event":"vote_granted","server":3,"from":3,"to":4,"term":2}
+{"ts":590,"event":"state_change","server":4,"term":2,"from_state":"candidate","to_state":"leader"}
+{"ts":640,"event":"append_entries","server":4,"from":4,"to":3,"term":2,"entry_count":1}
+{"ts":700,"event":"commit","server":4,"term":2,"index":1,"command":"set a 2"}
+{"ts":720,"event":"commit","server":3,"term":2,"index":1,"command":"set a 2"}
