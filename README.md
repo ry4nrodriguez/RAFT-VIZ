@@ -1,4 +1,4 @@
-# RaftViz
+# RAFTVIZ
 
 Drop-in visualization for your Raft implementation.
 Add a small amount of Go instrumentation, run your tests, and replay your cluster as an animated pixel-art.
