@@ -1,4 +1,4 @@
-# RaftVis Event Schema
+# RaftViz Event Schema
 
 Every event is written as one JSON object per line.
 
@@ -127,4 +127,3 @@ Every event is written as one JSON object per line.
 - unknown event types must be preserved and surfaced in the UI as generic events
 - missing optional fields should not break parsing
 - viewers should use `warning` rather than `failure` when insufficient data exists for a strict invariant
-

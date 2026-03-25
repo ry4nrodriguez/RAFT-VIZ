@@ -9,7 +9,7 @@ export function Header({ source }: HeaderProps) {
     <header className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg-panel)] px-5 py-4 shadow-[0_0_30px_rgba(0,0,0,0.35)]">
       <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-display text-lg text-[color:var(--text-accent)]">RAFTVIS</p>
+          <p className="font-display text-lg text-[color:var(--text-accent)]">RAFTVIZ</p>
           <p className="mt-2 text-sm text-[color:var(--text-secondary)]">
             Replay your real Raft cluster, not a toy simulation.
           </p>
@@ -22,4 +22,3 @@ export function Header({ source }: HeaderProps) {
     </header>
   );
 }
-

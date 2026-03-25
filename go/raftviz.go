@@ -1,4 +1,4 @@
-package raftvis
+package raftviz
 
 import (
 	"encoding/json"
@@ -24,7 +24,7 @@ type loggerState struct {
 var global loggerState
 
 func Init(numPeers int) {
-	defaultPath := filepath.Join(userHomeDir(), ".raftvis", "events.jsonl")
+	defaultPath := filepath.Join(userHomeDir(), ".raftviz", "events.jsonl")
 	InitWithPath(defaultPath, numPeers)
 }
 
@@ -251,4 +251,3 @@ func expandHome(path string) string {
 	}
 	return path
 }
-

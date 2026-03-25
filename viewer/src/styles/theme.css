@@ -58,6 +58,219 @@ body {
   font-family: var(--font-display);
 }
 
+.landing-shell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+.landing-shell::before {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05), transparent 28%),
+    radial-gradient(circle at 80% 30%, rgba(136, 170, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 42%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.landing-shell::after {
+  background: linear-gradient(rgba(255, 255, 255, 0.03) 50%, transparent 50%);
+  background-size: 100% 6px;
+  content: "";
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+  position: absolute;
+}
+
+.landing-panel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 980px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.logo-wordmark {
+  animation: logo-reveal 900ms cubic-bezier(0.2, 0.82, 0.2, 1) both;
+  display: grid;
+  justify-items: center;
+  line-height: 0.88;
+  position: relative;
+  transform-origin: center bottom;
+}
+
+.logo-wordmark-shadow,
+.logo-wordmark-glow,
+.logo-wordmark-face {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 8vw, 5.8rem);
+  letter-spacing: -0.12em;
+  grid-area: 1 / 1;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.logo-wordmark-face {
+  color: #f3f3f3;
+  position: relative;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25),
+    0 3px 0 rgba(168, 168, 168, 0.5),
+    0 6px 0 rgba(88, 88, 88, 0.65),
+    0 10px 18px rgba(0, 0, 0, 0.72);
+}
+
+.logo-wordmark-shadow {
+  color: rgba(255, 255, 255, 0.16);
+  transform: translateY(10px);
+}
+
+.logo-wordmark-glow {
+  animation: logo-glitch 6s ease-in-out infinite;
+  animation-delay: 1.1s;
+  color: rgba(255, 255, 255, 0.14);
+  mix-blend-mode: screen;
+  transform: translate(1px, -1px);
+}
+
+.landing-kicker {
+  color: var(--text-primary);
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.landing-copy {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.45rem);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 860px;
+}
+
+.landing-button {
+  background: #f3f3f3;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  color: #050508;
+  display: inline-flex;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.95rem 1.6rem;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.landing-button:hover {
+  background: white;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+@keyframes logo-glitch {
+  0%,
+  82%,
+  100% {
+    opacity: 0;
+    transform: translate(1px, -1px);
+  }
+  83% {
+    opacity: 0.2;
+    transform: translate(-2px, 1px);
+  }
+  84% {
+    opacity: 0.05;
+    transform: translate(2px, -2px);
+  }
+  85% {
+    opacity: 0.18;
+    transform: translate(-1px, 2px);
+  }
+  86% {
+    opacity: 0;
+    transform: translate(1px, -1px);
+  }
+}
+
+@keyframes logo-reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  55% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  70% {
+    filter: blur(0);
+    transform: translateY(-3px) scale(1.01);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-wordmark,
+  .logo-wordmark-glow {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo-wordmark-shadow,
+  .logo-wordmark-glow,
+  .logo-wordmark-face {
+    font-size: clamp(1.75rem, 8vw, 4rem);
+  }
+
+  .landing-copy {
+    max-width: 38rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .landing-shell {
+    padding: 1.5rem;
+  }
+
+  .logo-wordmark-shadow,
+  .logo-wordmark-glow,
+  .logo-wordmark-face {
+    font-size: clamp(1.1rem, 8vw, 2.5rem);
+    letter-spacing: -0.14em;
+  }
+
+  .landing-kicker {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .landing-copy {
+    font-size: 0.98rem;
+  }
+}
+
 .control-button {
   border: 1px solid var(--border-accent);
   border-radius: 0.9rem;
@@ -75,4 +288,3 @@ body {
 input[type="range"] {
   accent-color: var(--text-accent);
 }
-

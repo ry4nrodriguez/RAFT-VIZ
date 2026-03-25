@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: pagesMode ? "/raftvis/" : "/",
+    base: pagesMode ? "/RAFT-VIZ/" : "/",
     build: {
       outDir: pagesMode ? "dist-pages" : "../cli/dist",
       emptyOutDir: true

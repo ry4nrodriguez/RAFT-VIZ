@@ -4,6 +4,7 @@ import { EventLog } from "./components/EventLog";
 import { FileLoader } from "./components/FileLoader";
 import { Header } from "./components/Header";
 import { InvariantChecker } from "./components/InvariantChecker";
+import { LandingPage } from "./components/LandingPage";
 import { LogReplicationView } from "./components/LogReplicationView";
 import { PlaybackControls } from "./components/PlaybackControls";
 import { useKeyboardShortcuts } from "./hooks/useKeyboardShortcuts";
@@ -18,7 +19,7 @@ async function fetchText(path: string) {
   return response.text();
 }
 
-export default function App() {
+function ReplayPage() {
   const [dragActive, setDragActive] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
   const source = useReplayStore((state) => state.source);
@@ -171,4 +172,23 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+export default function App() {
+  const [route, setRoute] = useState(() => window.location.hash || "");
+
+  useEffect(() => {
+    function onHashChange() {
+      setRoute(window.location.hash || "");
+    }
+
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  if (route === "#/replay") {
+    return <ReplayPage />;
+  }
+
+  return <LandingPage />;
 }

@@ -1,10 +1,10 @@
 {
-  "name": "raftvis",
+  "name": "raftviz",
   "version": "0.1.0",
-  "description": "Local server and file watcher for the RaftVis viewer.",
+  "description": "Local server and file watcher for the RaftViz viewer.",
   "type": "module",
   "bin": {
-    "raftvis": "./index.js"
+    "raftviz": "./index.js"
   },
   "files": [
     "index.js",
@@ -15,4 +15,3 @@
     "test": "node --test index.test.js"
   }
 }
-

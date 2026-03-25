@@ -11,11 +11,10 @@ test("parseArgs handles positional path and flags", () => {
 
 test("buildStatusPayload falls back to sample mode when file does not exist", () => {
   const payload = buildStatusPayload({
-    watchPath: "/tmp/definitely-missing-raftvis-events.jsonl",
+    watchPath: "/tmp/definitely-missing-raftviz-events.jsonl",
     sample: "happy-path"
   });
 
   assert.equal(payload.mode, "sample");
   assert.ok(typeof payload.initialText === "string");
 });
-

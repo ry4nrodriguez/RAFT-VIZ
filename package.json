@@ -1,5 +1,5 @@
 {
-  "name": "raftvis-monorepo",
+  "name": "raftviz-monorepo",
   "version": "0.1.0",
   "private": true,
   "description": "Drop-in Raft visualizationS",

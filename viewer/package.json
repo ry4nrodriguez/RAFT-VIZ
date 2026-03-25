@@ -1,5 +1,5 @@
 {
-  "name": "@raftvis/viewer",
+  "name": "@raftviz/viewer",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -28,4 +28,3 @@
     "vitest": "^3.0.9"
   }
 }
-

@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DIST_DIR = path.join(__dirname, "dist");
 const DEFAULT_PORT = 8420;
-const DEFAULT_WATCH_PATH = path.join(os.homedir(), ".raftvis", "events.jsonl");
+const DEFAULT_WATCH_PATH = path.join(os.homedir(), ".raftviz", "events.jsonl");
 const SAMPLE_NAMES = ["happy-path", "leader-crash", "split-vote", "network-partition"];
 
 export function parseArgs(argv) {
@@ -49,13 +49,13 @@ export function parseArgs(argv) {
 }
 
 function printHelp() {
-  console.log(`RaftVis
+  console.log(`RaftViz
 
 Usage:
-  raftvis
-  raftvis <path>
-  raftvis --watch <path> [--port 8420] [--no-open]
-  raftvis --sample happy-path
+  raftviz
+  raftviz <path>
+  raftviz --watch <path> [--port 8420] [--no-open]
+  raftviz --sample happy-path
 `);
 }
 
@@ -168,7 +168,7 @@ function serveStatic(req, res) {
   }
 
   res.writeHead(404);
-  res.end("RaftVis viewer assets are missing. Run the viewer build first.");
+  res.end("RaftViz viewer assets are missing. Run the viewer build first.");
 }
 
 async function start() {
@@ -229,8 +229,8 @@ async function start() {
   }, 750);
 
   server.listen(port, "127.0.0.1", () => {
-    const targetUrl = `http://127.0.0.1:${port}`;
-    console.log(`RaftVis running at ${targetUrl}`);
+    const targetUrl = `http://127.0.0.1:${port}/#/replay`;
+    console.log(`RaftViz running at ${targetUrl}`);
     if (!options.noOpen) {
       openBrowser(targetUrl);
     }
@@ -240,4 +240,3 @@ async function start() {
 if (import.meta.url === `file://${process.argv[1]}`) {
   void start();
 }
-

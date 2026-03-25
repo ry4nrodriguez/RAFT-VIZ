@@ -1,4 +1,3 @@
-module raftvis
+module raftviz
 
 go 1.25.0
-

@@ -4,15 +4,14 @@ your tests, and then get an animated replay of your cluster with pixel-art
 servers, elections, crashes, and log activity.
 
 Setup:
-  curl -o raftvis.go https://raw.githubusercontent.com/YOUR_GITHUB/raftvis/main/go/raftvis.go
+  curl -o raftviz.go https://raw.githubusercontent.com/YOUR_GITHUB/RAFT-VIZ/main/go/raftviz.go
   [add the instrumentation lines from the README]
   go test -run 3A
-  npx raftvis
+  npx raftviz
 
-GitHub: https://github.com/YOUR_GITHUB/raftvis
-Demo: https://YOUR_GITHUB.github.io/raftvis
+GitHub: https://github.com/YOUR_GITHUB/RAFT-VIZ
+Demo: https://YOUR_GITHUB.github.io/RAFT-VIZ
 
 It is especially helpful for debugging elections, seeing which server timed
 out first, and spotting when replication or leadership transitions stop
 making sense.
-

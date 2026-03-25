@@ -1,4 +1,4 @@
-package raftvis
+package raftviz
 
 import (
 	"bufio"
